@@ -4,7 +4,7 @@ import {DB_NAME} from "../constants.js";
 const connectDB = async ()=>{
     try{
         const connectionInstance = await mongoose.connect(
-          `mongodb+srv://shiv04313:stars123@cluster0.dno0w.mongodb.net/videotube`
+          `${process.env.MONGODB_URI}/${DB_NAME}`
         );
         console.log(`\nConnection to database established: ${connectionInstance.connection.host}`)
     }catch(error){
